@@ -68,15 +68,8 @@ p{
     margin-right: 30px;
 
 }
-.gamelist{
-    margin-left:200px;
-}
 
-.gamelist img{
 
-    width: 400px;
-    height:400px;
-}
 
 .Quote{
 
@@ -104,8 +97,7 @@ p{
     width: 100%;
     height:100%;
     margin: 20px auto;
- padding: 0;
-
+    padding: 0;
     Background:lightgray;
     position:center;
 }
@@ -177,3 +169,32 @@ input[type=button], input[type=submit]{
     display: inline-block;
 }
 //End styling for games form.
+
+//Styling for images on homepage.
+//**************************
+.gamelist{
+    display: flex;
+    flex-wrap: wrap;
+    background-color:lightgray;
+}
+
+.gamelist img{
+    width: 400px;
+    height:400px;
+}
+.imgcontainer{
+    display: inline-block;
+    background:lightgray;
+    margin:10px 0 0 10px;
+    flex-grow: 1;
+    height:100px;    
+    width: calc(100% * (1/4) - 10px - 1px)
+}
+
+.imghover{
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    color: white;
+}
+//End image container styling.

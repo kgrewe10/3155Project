@@ -1,5 +1,5 @@
 <div class="main">
-    <script href="assets/javascripts/homepage.js"></script>
+    <script href="assets/javascripts/gamehover.js.erb"></script>
 <h1>GamesOnline</h1>
     <nav>
     <ul>
@@ -20,35 +20,48 @@
 <!-- <img src="real.jpg" alt="logo" style="float:left;width:400px;height:400px;margin-right:60px;"> -->
 
 <!-- div creates drake grey box around the text-->
-<div class="home">
+<main>
+    <div class="home">
     <div class="gamelist">
-        <!--Sample images for the website, hardcoded. -->
+        <!--Sample images for the website, hardcoded. 
         <%=image_tag("1.jpg", alt: "Example Image", id:"1")%>
         <%=image_tag("2.jpg", alt: "Example Image", id:"2")%>
         <%=image_tag("3.jpg", alt: "Example Image", id:"3")%>
         <%=image_tag("4.png", alt: "Example Image", id:"4")%>
         <%=image_tag("5.jpg", alt: "Example Image", id:"5")%>
         <%=image_tag("6.jpg", alt: "Example Image", id:"6")%>
-        <%=image_tag("7.jpg", alt: "Example Image", id:"7")%>
+        <%=image_tag("7.jpg", alt: "Example Image", id:"7")%>-->
         
     <!--TODO: For each game, add an image to the home page while
     less than the max home page images. -->
-     <!-- <% @games.each do |game| %>
-     <% if @game.image.attached? %>
-         <%=image_tag(url_for(game.image), alt: game.name, id: game.id)%>
-        <%= game.type %>
-      <%= game.price%>
-      <%= game.description %>
-      <%= game.onlinePlayers %>
-      <%= game.offlinePlayers %>
-      <%= game.platform %>
-      <%= game.rating %>
-    <% end %>
-      
-      
-      <%= link_to 'Show', game_path(game) %>
-      <% end %>-->
+     <% @games.each do |game| %>
+         <% if game.image.attached? %>
+             <div class="imgcontainer">
+                 <img src="<%=(url_for(game.image))%>" alt="<%=game.name%>", id="<%=game.id%>")%>
+                 <div class="imghover" hidden>
+                     <h3><%=game.name%></h3>
+                     <p><%=game.platform%></p>
+                    <p><%=game.description%></p>
+                 </div>
+             </div>
+        <% end %>
+     <% end %>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+     <script>
+      $(function() { 
+        $("img").hover(function() {
+          // we are hovering over a hidden-div class
+          $(this).next().show();
+        }, function() {
+          // we are moving out of a hidden-div class
+          $(this).next().hide();
+        });
+      });
+    </script>
+     
     </div>
 </div>
+</main>
+
 
 </body>
