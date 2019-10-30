@@ -4,7 +4,8 @@
 h1 {
      text-align: center;
      margin-top: 0.30em;
-     margin-bottom: 0.20em;
+     margin-bottom: 0;
+     padding-bottom: 0;
     margin-right: 20px;
      font-size: 60px;
      color: dimgrey;
@@ -23,27 +24,43 @@ h1 {
     width: 50%;
 }
 
-
+//Styling for nav bar.
+//********************
+nav{
+    position: fixed;
+    text-align: center;
+}
 nav ul{
-
     margin-left: 425px;
-
     list-style: none;
 }
 
 nav li{
     display: inline-block;
-    margin-right: 120px;
+    text-align: center;
 }
 
 nav a {
-    color: dimgrey;
+    background-color: #c2c2c2;
+    color: white;
     font-size: 30px;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: strong;
 }
+
+nav a:hover{
+    background-color: black;
+}
+
+//End styling for nav bar.
+//*************************
 
 p{
     font-size: 40px;
-
     margin-left: 60px;
 }
 .logo{
@@ -51,13 +68,11 @@ p{
     margin-right: 30px;
 
 }
-.Gallary{
-
+.gamelist{
     margin-left:200px;
-
-
 }
-.Gallary img{
+
+.gamelist img{
 
     width: 400px;
     height:400px;
@@ -114,6 +129,7 @@ textarea{
 
 .main{
     text-align: center;
+    padding-bottom: 100px;
 }
 
 .header{
@@ -148,3 +164,31 @@ label {
     Background:lightgray;
     position:center;
 }
+
+//Styling for games form.
+input[type=text]{
+    width: 50%;
+    padding: 12px 12px;
+    border: 2px solid #ccc;
+    background-color: #f8f8f8;
+}
+
+textarea{
+    width: 100%;
+    height: 300px;
+    padding: 12px 12px;
+    border: 2px solid #ccc;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+input[type=button], input[type=submit]{
+    background-color: #32a852;
+    float: right;
+    border: none;
+    color: white;
+    padding: 16px 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+//End styling for games form.

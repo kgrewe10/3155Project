@@ -1,29 +1,28 @@
-<div class="main">
+<div class="main" class="center">
 <h1>GamesOnline</h1>
-
-    <!-- button is link to the Quote page -->
-    <!-- <button><a href=Contact.html>Sign-in</a></button>-->
+    <nav>
+    <ul>
+        <li><a href=<%  games_path %>>Home</a></li>
+        <li><a href='/games/topgames.html'>Top Games</a></li>
+        <li><a href='/games/new'>Upload Game</a></li>
+        <li><a href=>Login</a></li>
+    </ul>
+    </nav>
 </div>
 
 </head>
 <body>
 <!-- nav creates the tabs for differnet parts of the webpage -->
-<nav>
-    <ul>
-        <li><a href=<%  games_path %>>Home</a></li>
-        <li><a href="/games/topgames.html">Top Games</a></li>
-        <li><a href=About.html>About Us</a></li>
-        <li><a href="Contact.html">Sign-in</a></li>
-    </ul>
-</nav>
+
 
 <!-- the real image is the logo of the company -->
 <!-- <img src="real.jpg" alt="logo" style="float:left;width:400px;height:400px;margin-right:60px;"> -->
 
 <!-- div creates drake grey box around the text-->
 <div class="home">
-    <div class="Gallary">
+    <div class="gamelist">
     
+        <!--Sample images for the website, hardcoded. -->
         <%=image_tag("1.jpg", alt: "Example Image")%>
         <%=image_tag("2.jpg", alt: "Example Image")%>
         <%=image_tag("3.jpg", alt: "Example Image")%>
@@ -41,6 +40,8 @@
       <%= game.onlinePlayers %>
       <%= game.offlinePlayers %>
       <%= game.platform %>
+      <%= game.rating %>
+      
       <%= link_to 'Show', game_path(game) %>
       <% end %>
     </div>
