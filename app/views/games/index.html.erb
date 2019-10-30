@@ -1,0 +1,49 @@
+<div class="main">
+<h1>GamesOnline</h1>
+
+    <!-- button is link to the Quote page -->
+    <!-- <button><a href=Contact.html>Sign-in</a></button>-->
+</div>
+
+</head>
+<body>
+<!-- nav creates the tabs for differnet parts of the webpage -->
+<nav>
+    <ul>
+        <li><a href=<%  games_path %>>Home</a></li>
+        <li><a href="/games/topgames.html">Top Games</a></li>
+        <li><a href=About.html>About Us</a></li>
+        <li><a href="Contact.html">Sign-in</a></li>
+    </ul>
+</nav>
+
+<!-- the real image is the logo of the company -->
+<!-- <img src="real.jpg" alt="logo" style="float:left;width:400px;height:400px;margin-right:60px;"> -->
+
+<!-- div creates drake grey box around the text-->
+<div class="home">
+    <div class="Gallary">
+    
+        <%=image_tag("1.jpg", alt: "Example Image")%>
+        <%=image_tag("2.jpg", alt: "Example Image")%>
+        <%=image_tag("3.jpg", alt: "Example Image")%>
+        <%=image_tag("4.png", alt: "Example Image")%>
+        <%=image_tag("5.jpg", alt: "Example Image")%>
+        <%=image_tag("6.jpg", alt: "Example Image")%>
+        <%=image_tag("7.jpg", alt: "Example Image")%>
+        
+      <% @games.each do |game| %>
+      <%= game.id %>
+      <%= game.name %>
+      <%= game.type %>
+      <%= game.price%>
+      <%= game.description %>
+      <%= game.onlinePlayers %>
+      <%= game.offlinePlayers %>
+      <%= game.platform %>
+      <%= link_to 'Show', game_path(game) %>
+      <% end %>
+    </div>
+</div>
+
+</body>
