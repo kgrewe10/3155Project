@@ -37,8 +37,8 @@
      <% @games.each do |game| %>
          <% if game.image.attached? %>
              <div class="imgcontainer">
-                 <img src="<%=(url_for(game.image))%>" alt="<%=game.name%>", id="<%=game.id%>")%>
-                 <div class="imghover" hidden>
+                 <img class="gameimg" src="<%=(url_for(game.image))%>" alt="<%=game.name%>", id="<%=game.id%>")%>
+                 <div class="imghover">
                      <h3><%=game.name%></h3>
                      <p><%=game.platform%></p>
                     <p><%=game.description%></p>
@@ -49,7 +49,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
      <script>
       $(function() { 
-        $("img").hover(function() {
+        $(".gameimg").hover(function() {
           // we are hovering over a hidden-div class
           $(this).next().show();
         }, function() {
