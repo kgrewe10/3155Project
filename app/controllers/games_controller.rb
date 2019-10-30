@@ -14,8 +14,11 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     
-    @game.save
-    redirect_to @game
+    if @game.save
+        redirect_to @game
+    else
+        render 'new'
+    end
   end
   
   def edit
@@ -29,9 +32,9 @@ class GamesController < ApplicationController
         else
             render 'edit'
         end
- end
+  end
  
- def destroy
+  def destroy
     @game = game.find(params[:id])
     @game.destroy
     redirect_to games_path
