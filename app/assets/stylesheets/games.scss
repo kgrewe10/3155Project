@@ -9,7 +9,7 @@ h1 {
      font-size: 60px;
      color: dimgrey;
      float:top;
-    display: inline-block;
+     display: inline-block;
  }
 
 .background{
@@ -17,10 +17,10 @@ h1 {
 }
 
 .center {
-    display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    text-align: center;
 }
 
 //Styling for nav bar.
@@ -102,10 +102,6 @@ p{
     position:center;
 }
 
-.main{
-    text-align: center;
-}
-
 .centered{
   height: 100px;
   width: 100px;
@@ -119,26 +115,17 @@ p{
 .header{
     width: 600px;
     height:400px;
-
     padding: 0;
-
     Background:lightgray;
     position:center;
 }
 
-.main button {
-
-    width: 90px;
-    height: 40px;
-
-}
 label {
-
     font-size: 1em;
-
     font-weight: bold;
 
 }
+
 .form{
     width: auto;
     height:100%;
@@ -219,3 +206,13 @@ input[type=button], input[type=submit]{
    color: white;
 }
 //End image container styling.
+
+.allgames > h3{
+    color: dimgrey;
+    background-color: lightgray;
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 0;
+    border: 2px solid black;
+    border-bottom: 0;
+}
