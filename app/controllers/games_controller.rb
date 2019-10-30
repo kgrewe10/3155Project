@@ -47,5 +47,5 @@ end
 #Define parameters to take in to create a new game.
 private
 def game_params
-  params.require(:game).permit(:name, :type, :price, :description, :onlinePlayers, :offlinePlayers, :platform)
+  params.require(:game).permit(:name, :game_type, :price, :description, :onlinePlayers, :offlinePlayers, :platform, :image)
 end

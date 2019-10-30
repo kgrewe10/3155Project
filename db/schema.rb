@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_30_053111) do
+ActiveRecord::Schema.define(version: 2019_10_30_142720) do
+
+  create_table "active_storage_attachements", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.integer "record_id", null: false
+    t.integer "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachements_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attchements_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filenmae", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "games", force: :cascade do |t|
     t.string "name"
@@ -25,7 +46,6 @@ ActiveRecord::Schema.define(version: 2019_10_30_053111) do
     t.datetime "updated_at", precision: 6, null: false
     t.decimal "rating"
     t.string "game_type"
-    t.string "image_path"
   end
 
 end

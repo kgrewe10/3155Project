@@ -34,14 +34,17 @@
     <!--TODO: For each game, add an image to the home page while
     less than the max home page images. -->
      <!-- <% @games.each do |game| %>
-     <%=image_tag(game.image_path, alt: game.name, id: game.id)%>
-      <%= game.type %>
+     <% if @game.image.attached? %>
+         <%=image_tag(url_for(game.image), alt: game.name, id: game.id)%>
+        <%= game.type %>
       <%= game.price%>
       <%= game.description %>
       <%= game.onlinePlayers %>
       <%= game.offlinePlayers %>
       <%= game.platform %>
       <%= game.rating %>
+    <% end %>
+      
       
       <%= link_to 'Show', game_path(game) %>
       <% end %>-->
