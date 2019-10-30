@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_30_044654) do
+ActiveRecord::Schema.define(version: 2019_10_30_053111) do
 
   create_table "games", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_10_30_044654) do
     t.datetime "updated_at", precision: 6, null: false
     t.decimal "rating"
     t.string "game_type"
+    t.string "image_path"
   end
 
 end

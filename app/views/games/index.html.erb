@@ -1,4 +1,4 @@
-<div class="main" class="center">
+<div class="main">
 <h1>GamesOnline</h1>
     <nav>
     <ul>
@@ -31,9 +31,10 @@
         <%=image_tag("6.jpg", alt: "Example Image")%>
         <%=image_tag("7.jpg", alt: "Example Image")%>
         
-      <% @games.each do |game| %>
-      <%= game.id %>
-      <%= game.name %>
+    <!--TODO: For each game, add an image to the home page while
+    less than the max home page images. -->
+     <!-- <% @games.each do |game| %>
+     <%=image_tag(game.image_path, alt: game.name, id: game.id)%>
       <%= game.type %>
       <%= game.price%>
       <%= game.description %>
@@ -43,7 +44,7 @@
       <%= game.rating %>
       
       <%= link_to 'Show', game_path(game) %>
-      <% end %>
+      <% end %>-->
     </div>
 </div>
 
