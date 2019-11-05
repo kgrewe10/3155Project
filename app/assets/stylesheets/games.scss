@@ -183,14 +183,15 @@ input[type=button], input[type=submit]{
     display: inline-block;
     background:lightgray;
     margin:10px 0 300px 10px;
-    flex-grow: 1;
+    flex-grow: 0;
     height:200px;    
-    width: calc(100% * (1/4) - 10px - 1px)
+    width: calc(100% * (1/4) - 10px - 1px);
 }
 
 .imghover{
     display: none;
     padding-left: 10px;
+    margin: 0;
 }
 
 .imgcontainer:hover .imghover {
