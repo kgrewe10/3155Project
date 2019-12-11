@@ -35,6 +35,14 @@ group :development, :test do
   gem 'omniauth-oauth2', '~>1.6'
 end
 
+group :test do
+  gem 'cucumber'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'rspec-rails'
+  gem 'capybara'
+end
+
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
