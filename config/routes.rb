@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   
   get "home/index"
+  get  "games/purchase.html.erb", to: "games#purchase", as: "purchase"
   get "games/topgames.html", to: "games#topgames", as: "topgames"
   resources :games
   

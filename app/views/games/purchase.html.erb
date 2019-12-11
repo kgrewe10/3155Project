@@ -1,0 +1,15 @@
+<h1>Purchase Game</h1>
+  <p>
+    <strong>Name</strong>
+    <%= @game.name %>
+  </p>
+  
+ <p>
+    <strong>Price</strong>
+    <%= @game.price %>
+  </p>
+  
+  <p>
+    <strong>Platform</strong>
+    <%= select_tag "platform", options_for_select(@platforms) %>
+  </p>

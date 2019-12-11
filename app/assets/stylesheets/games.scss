@@ -42,7 +42,7 @@ nav li{
 
 nav a {
     background-color: #c2c2c2;
-    color: white;
+    color: black;
     font-size: 30px;
     padding: 14px 25px;
     text-align: center;
@@ -125,6 +125,7 @@ label {
 
 }
 
+//Styling for games form.
 .form{
     width: auto;
     height:100%;
@@ -135,7 +136,6 @@ label {
     position:center;
 }
 
-//Styling for games form.
 input[type=text]{
     width: 30%;
     padding: 12px 12px;
@@ -172,40 +172,60 @@ input[type=button], input[type=submit]{
     display: flex;
     flex-wrap: wrap;
     background-color:lightgray;
+    padding-top: 10px;
 }
 
 .gamelist img{
-    width: 464px;
-    height:500px;
+    width: 100%;
+    height: 90%;
+    transition-duration: 0.3s;
 }
+
+.gamelist img:hover{
+    width: 102%;
+    height: 92%;
+    transition-duration: 0.3s;
+    box-shadow: 2px 2px 10px black;
+}
+
 .imgcontainer{
     position: relative;
     display: inline-block;
     background:lightgray;
-    margin:10px 0 300px 10px;
+    margin:0px 0 10px 10px;
     flex-grow: 0;
-    height:200px;    
-    width: calc(100% * (1/4) - 10px - 1px);
+    height:550px;    
+    width: calc(100% * (1/4) - 18px - 1px);
+    line-height: 30px;
+    border: 3px solid white;
 }
 
 .imghover{
-    display: none;
+    display:none;
     padding-left: 10px;
-    margin: 0;
-}
-
-.imgcontainer:hover .imghover {
-   width:100%;
-   height:100%;
-   background:rgba(0,0,0,.8);
+    width:102%;
+   height:auto;
+   background:rgba(255,255,255,.8);
    position:absolute;
    top:0;
    left:0;
-   display:inline-block;
    box-sizing:border-box;
-   color: white;
+   color: black;
+   word-wrap:break-word;
    pointer-events: none;
 }
+
+.crud{
+    position: absolute;
+}
+
+.crud a{
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 3px black;
+}
+
 //End image container styling.
 
 .allgames > h3{

@@ -10,13 +10,26 @@
   </head>
 
   <body>
-    <div>
+    <div class="signinout">
       <% if current_user %>
-      Signed is as <strong><%= current_user.name %></strong>!
-      <%= link_to "Sign Out", signout_path, id:"sign_out" %>
+      <p><strong><%= current_user.name %></strong>
+      <%= link_to "Logout", signout_path, id:"sign_out" %></p>
       <% else %>
-      <%= link_to "Sign in with Google", "/auth/google_oauth2", id:"sign_in" %>
+      <%= link_to "Login", "/auth/google_oauth2", id:"sign_in" %>
       <% end %>
+    </div>
+    
+    <div class="center">
+    <script href="assets/javascripts/gamehover.js.erb"></script>
+      <h1>GamesOnline</h1>
+    <nav>
+    <ul>
+        <li><a href='/home/index/'>Home</a></li>
+        <li><a href='/games/'>All Games</a></li>
+        <li><a href='/games/topgames.html'>Top Games</a></li>
+        <li><a href='/games/new'>Upload Game</a></li>
+    </ul>
+    </nav>
     </div>
     <%= yield %>
   </body>

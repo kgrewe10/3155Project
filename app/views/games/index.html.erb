@@ -1,18 +1,3 @@
-<head></head><div class="center">
-    <script href="assets/javascripts/gamehover.js.erb"></script>
-<h1>GamesOnline</h1>
-    <nav>
-    <ul>
-        <li><a href='/home/index/'>Home</a></li>
-        <li><a href='/games/'>All Games</a></li>
-        <li><a href='/games/topgames.html'>Top Games</a></li>
-        <li><a href='/games/new'>Upload Game</a></li>
-        <!--<li><a href=>Login</a></li>-->
-    </ul>
-    </nav>
-</div>
-
-</head>
 <body>
 <!-- nav creates the tabs for differnet parts of the webpage -->
 
@@ -22,17 +7,8 @@
 
 <!-- div creates drake grey box around the text-->
 <main>
-    <div class="allgames">
-        <h3>ALL GAMES</h3>
+    <div class="home">
     <div class="gamelist">
-        <!--Sample images for the website, hardcoded. 
-        <%=image_tag("1.jpg", alt: "Example Image", id:"1")%>
-        <%=image_tag("2.jpg", alt: "Example Image", id:"2")%>
-        <%=image_tag("3.jpg", alt: "Example Image", id:"3")%>
-        <%=image_tag("4.png", alt: "Example Image", id:"4")%>
-        <%=image_tag("5.jpg", alt: "Example Image", id:"5")%>
-        <%=image_tag("6.jpg", alt: "Example Image", id:"6")%>
-        <%=image_tag("7.jpg", alt: "Example Image", id:"7")%>-->
         
     <!--TODO: For each game, add an image to the home page while
     less than the max home page images. -->
@@ -44,21 +20,41 @@
                      <h3><%=game.name%></h3>
                      <p><%=game.platform%></p>
                     <p><%=game.description%></p>
-                 </div>
+                </div>
+                <div class="crud">
+                    <%= link_to 'View', game_path(game) %>
+                     <%= link_to 'Edit', edit_game_path(game) %>
+                     <%= link_to 'Delete',
+                          game_path(game),
+                          method: :delete,
+                         data: { confirm: 'Are you sure?' } %>
+                   <%= link_to 'Purchase',
+                          purchase_path(game)%>
+                </div>
+                
              </div>
         <% end %>
      <% end %>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
      <script>
+           
+     var $images = $("img");
+    
+    // Preload the images.
+    $images.each(function(){
+        // preload the image for each link
+        var img = new Image();
+        img.src = this.href;
+    });
+    
       $(function() { 
         $(".gameimg").hover(function() {
-          // we are hovering over a hidden-div class
           $(this).next().show();
         }, function() {
-          // we are moving out of a hidden-div class
           $(this).next().hide();
         });
       });
+
     </script>
      
     </div>

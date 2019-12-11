@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   def index
     @games = Game.all
+    @games = @games.sort_by &:name
   end
   
   def new
@@ -26,7 +27,7 @@ class GamesController < ApplicationController
   end
   
   def update
-        @game = game.find(params[:id])
+        @game = Game.find(params[:id])
         if @game.update(game_params)
             redirect_to @game
         else
@@ -35,16 +36,19 @@ class GamesController < ApplicationController
   end
  
   def destroy
-    @game = game.find(params[:id])
+    @game = Game.find(params[:id])
     @game.destroy
     redirect_to games_path
   end
   
   def topgames
     @games = Game.all
-    
   end
-
+  
+  def purchase
+    @game = Game.find(params[:format])
+    @platforms = @game.platform.split(',')
+  end
 end
 
 #Define parameters to take in to create a new game.
