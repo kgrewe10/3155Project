@@ -47,4 +47,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   
   config.hosts << "59eeee2aa1024c83928f37c7fa118f4e.vfs.cloud9.us-east-2.amazonaws.com"
+  Capybara.app_host = 'http://59eeee2aa1024c83928f37c7fa118f4e.vfs.cloud9.us-east-2.amazonaws.com'
 end

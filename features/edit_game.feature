@@ -6,7 +6,7 @@ Feature: View a game
     
 Scenario: As a game developer I want to be able to edit games
     Given I am on the home page
-    When I click on the "Edit" link
+    When I click on the Edit game link
     Then I should see the "Name" field
     And I should see the "Game type" field
     And I should see the "Price" field

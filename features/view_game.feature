@@ -6,12 +6,12 @@ Feature: View a game
     
 Scenario: As a game player I want to be able to view new games
     Given I am on the home page
-    When I click on the "View" link
-    Then I should see the "Name" field
-    And I should see the "Game type" field
-    And I should see the "Price" field
-    And I should see the "Description" field
-    And I should see the "Online Players" field
-    And I should see the "Offline Players" field
-    And I should see the "Platform" field
+    When I click on the View game link
+    Then I should see the "Name" text
+    And I should see the "Game type" text
+    And I should see the "Price" text
+    And I should see the "Description" text
+    And I should see the "Online Players" text
+    And I should see the "Offline Players" text
+    And I should see the "Platform" text
     Then I should be on the "Game" page
