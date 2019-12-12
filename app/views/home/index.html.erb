@@ -27,7 +27,7 @@
                      <%= link_to 'Delete',
                           game_path(game),
                           method: :delete,
-                         data: { confirm: 'Are you sure?' } %>
+                         data: { confirm: 'Are you sure you want to delete ' + game.name + "?" } %>
                    <%= link_to 'Purchase',
                           purchase_path(game)%>
                 </div>

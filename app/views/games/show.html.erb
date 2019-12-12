@@ -1,4 +1,6 @@
 <h2>Game</h2>
+
+<div class="show">
    <p>
     <img class="gameimg" src="<%=(url_for(@game.image))%>" alt="<%=@game.name%>", id="<%=@game.id%>")%>
   </p>
@@ -32,4 +34,6 @@
     <%= @game.platform %>
   </p>
   
-  <%= link_to 'Back', games_path %>
+  <%= link_to 'Back', root_path %>
+</div>
+  
