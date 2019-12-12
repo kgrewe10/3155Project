@@ -134,6 +134,14 @@ label {
     position:center;
 }
 
+select{
+    width: 20%;
+    padding: 8px;
+    border: 2px solid #ccc;
+    background-color: #f8f8f8;
+    display: inline-block;
+}
+
 input[type=text], input[type=number], .file{
     width: 90%;
     padding: 12px 12px;
@@ -245,11 +253,7 @@ input[type=button], input[type=submit]{
     position: relative;
 }
 
-.topgames{
-    background-color: lightgray;
-}
-
-.forms{
+.topgames, .purchase_form, .forms{
     background-color: lightgray;
     padding: 10px;
     overflow: auto;

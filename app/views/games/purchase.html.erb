@@ -18,10 +18,9 @@
     <strong>Platform</strong>
     <%= select_tag "platform", options_for_select(@platforms) %>
   </p>
-  <script><% @selected %> = $("platform").value </script>
     <p>
     <%= submit_tag("Purchase", data: { confirm: "Confirm purchase of " + @game.name + " for $" + ('%.2f' % @game.price).to_s } ) %>
   </p>
-  <% end %>
   <%= link_to 'Back', games_path %>
+  <% end %>
   </div>
