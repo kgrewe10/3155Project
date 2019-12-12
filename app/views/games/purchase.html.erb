@@ -1,4 +1,8 @@
-<h1>Purchase Game</h1>
+<h2>Purchase Game</h2>
+<%= form_tag(root_path, method: "GET") do %> 
+  <p>
+    <img class="gameimg" src="<%=(url_for(@game.image))%>" alt="<%=@game.name%>", id="<%=@game.id%>")%>
+  </p>
   <p>
     <strong>Name</strong>
     <%= @game.name %>
@@ -13,3 +17,8 @@
     <strong>Platform</strong>
     <%= select_tag "platform", options_for_select(@platforms) %>
   </p>
+  <script><% @selected %> = $("platform").value </script>
+    <p>
+    <%= submit_tag("Purchase", data: { confirm: "Confirm purchase of " + @game.name + " for $" + ('%.2f' % @game.price).to_s } ) %>
+  </p>
+  <% end %>
