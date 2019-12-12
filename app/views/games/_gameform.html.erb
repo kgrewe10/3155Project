@@ -1,8 +1,8 @@
 <%= form_for @game do |f| %>
 
-<% if @game.errors.any? %>
-    <div id="error_explanation">
-      <h2>
+ <% if @game.errors.any? %>
+ <div>
+    <h2>
         <%= pluralize(@game.errors.count, "error") %> when creating new game.
       </h2>
       <ul>
@@ -10,32 +10,45 @@
           <li><%= msg %></li>
         <% end %>
       </ul>
-    </div>
+ </div>
+      
   <% end %>
   
-  <p>
+  <div class="forms">
+     <div class="game_form">
+    <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
  
   <p>
     <%= f.label :game_type %><br>
-    <%= f.text_area :game_type %>
+    <%= f.text_field :game_type %>
   </p>
  
  <p>
     <%= f.label :price %><br>
     <%= f.number_field :price %>
   </p>
+
+   <p>
+    <%= f.label :onlinePlayers %><br>
+    <%= f.number_field :onlinePlayers %>
+  </p>
+        <p>
+    <%= f.label :image%><br>
+    <%= f.file_field :image, :class => "file" %>
+  </p>
+
   
-  <p>
+    <p>
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </p>
-  
-  <p>
-    <%= f.label :onlinePlayers %><br>
-    <%= f.number_field :onlinePlayers %>
+
+    <p>
+    <%= f.label :platform %><br>
+    <%= f.text_area :platform %>
   </p>
   
   <p>
@@ -43,17 +56,11 @@
     <%= f.number_field :offlinePlayers %>
   </p>
   
-  <p>
-    <%= f.label :platform %><br>
-    <%= f.text_area :platform %>
-  </p>
   
-  <p>
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </p>
+
+  </div>
+  <%= link_to 'Back', games_path %>
+  <%= f.submit %>
+  </div>
   
-  <p>
-    <%= f.submit %>
-  </p>
 <% end %>

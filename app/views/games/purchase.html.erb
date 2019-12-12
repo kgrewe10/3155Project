@@ -1,4 +1,5 @@
 <h2>Purchase Game</h2>
+<div class="purchase_form">
 <%= form_tag(root_path, method: "GET") do %> 
   <p>
     <img class="gameimg" src="<%=(url_for(@game.image))%>" alt="<%=@game.name%>", id="<%=@game.id%>")%>
@@ -22,3 +23,5 @@
     <%= submit_tag("Purchase", data: { confirm: "Confirm purchase of " + @game.name + " for $" + ('%.2f' % @game.price).to_s } ) %>
   </p>
   <% end %>
+  <%= link_to 'Back', games_path %>
+  </div>

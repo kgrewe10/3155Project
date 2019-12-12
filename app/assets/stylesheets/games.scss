@@ -122,7 +122,6 @@ p{
 label {
     font-size: 1em;
     font-weight: bold;
-
 }
 
 //Styling for games form.
@@ -131,22 +130,22 @@ label {
     height:100%;
     margin: 20px auto;
     padding: 0;
-
     Background:lightgray;
     position:center;
 }
 
-input[type=text]{
-    width: 30%;
+input[type=text], input[type=number], .file{
+    width: 90%;
     padding: 12px 12px;
     border: 2px solid #ccc;
     background-color: #f8f8f8;
     display: inline-block;
+    margin-bottom: 50px;
 }
 
 textarea{
-    width: 30%;
-    height: 300px;
+    width: 90%;
+    height: 100px;
     padding: 12px 12px;
     border: 2px solid #ccc;
     background-color: #f8f8f8;
@@ -162,6 +161,7 @@ input[type=button], input[type=submit]{
     text-decoration: none;
     cursor: pointer;
     display: inline-block;
+    box-shadow: 1px 1px 3px black;
 }
 //End styling for games form.
 
@@ -236,4 +236,23 @@ input[type=button], input[type=submit]{
     margin-bottom: 0;
     border: 2px solid black;
     border-bottom: 0;
+}
+
+.game_form, .purchase_form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    position: relative;
+}
+
+.forms{
+    background-color: lightgray;
+    padding: 10px;
+    overflow: auto;
+}
+
+.forms p{
+    width: 25%;
+    height: auto;
+    margin: 0 auto;
 }
